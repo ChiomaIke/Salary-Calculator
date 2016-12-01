@@ -4,8 +4,11 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=640">
+
     <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
+
   </head>
 
   <body>
@@ -16,6 +19,7 @@
         <span class="ribbon-outer">
           <span class="ribbon-inner">
             <h1>Salary-calculator</h1>
+            <h2></h2>
           </span>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
@@ -29,23 +33,60 @@
 	  <br><br>
         <span>Welcome to Teamy Salary Calculator</span>
 		<br><br>
-		<select>
+		<select id='name'>
 		<option value="Chioma Ike">Please select an Employee Level</option value>
-		<option value="Chioma Ike">Intern</option value>
-		<option value="Chioma Ike">Associate</option value>
-		<option value="Chioma Ike">Manager</option value>
-		<option value="Chioma Ike">C-Executive</option value>
-		<option value="Chioma Ike">Director</option value>
+		<option value="interns" name="intern">interns</option value>
+		<option value="Associate" name="Associate">Associate</option value>
+		<option value="Managers" name="Manager">Manager</option value>
+		<option value="C-executives" name="C-Executive">C-Executive</option value>
+		<option value="Directors" name="Director">Director</option value>
 		
 		</select>
 		
-		<button><b>Calculate Salary</b></button>
+
+
+      
+		<button onclick='getSal()'><b>Calclate Salary</b></button>
+    <p> <u>Report</u></p>
+    <div id="display">Salary appears here</div>
       </section>
 	  
 	
 </div>
   
-    
+    <script>
+      function getSal(){
+      var c = document.getElementById('name');
+      var value = c.options[c.selectedIndex].value;
+        console.log(value);
+     var returned = calculateSalary(value);
+     document.getElementById('display').innerHTML = "The salary report of the" + value +" is "+ returned;
+                }
+    function calculateSalary(level){
+    var  salary = GetSalary(level);
+    return salary;
+     }
+
+      var GetSalary = function (level){
+         var baseSalary = 20000;
+         if(level ==='interns'){
+             return baseSalary+(baseSalary*0);
+         }
+         else if (level === 'Associate'){
+             return baseSalary+(baseSalary*1);
+         }
+        else if (level === 'Managers'){
+             return baseSalary+(baseSalary*1.5);
+         }
+         else if (level === 'C-executives'){
+             return baseSalary+(baseSalary*2.5);
+         }
+         else if (level === 'Directors'){
+           return baseSalary+(baseSalary*3);
+         }
+      }
+
+    </script>
   </body>
  <div>
   <footer>
