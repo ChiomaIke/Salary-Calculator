@@ -7,21 +7,21 @@ function calculateSalary(level){
 var GetSalary = function (level){
     var baseSalary = 20000;
     if(level ==='interns'){
-        return baseSalary+(basesalary*1);
+        return baseSalary;
     }
     else if (level === 'associate'){
-        return baseSalary+(basesalary*1.5);
+        return baseSalary+(baseSalary*1);
     }
    else if (level === 'managers'){
-        return baseSalary+(basesalary*2.5);
+        return baseSalary+(baseSalary*1.5);
     }
     else if (level === 'C-executives'){
-        return baseSalary+(basesalary*2.5);
+        return baseSalary+(baseSalary*2.5);
     }
-    else(level === 'directors'){
-      return baseSalary+(basesalary*3);
+    else if(level === 'directors'){
+      return baseSalary+(baseSalary*3);
     }
 }
 
-calculateSalary("Fisayomi");
+
 
